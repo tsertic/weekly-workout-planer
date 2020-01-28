@@ -1,0 +1,26 @@
+.WorkoutField {
+  margin: 5px 10px;
+  height: 50px;
+
+  display: flex;
+}
+.information {
+  display: flex;
+  align-items: center;
+  border: 2px solid rosybrown;
+  width: 90%;
+}
+.deleteBox {
+  width: 8%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.WorkoutField_title {
+  width: 20%;
+}
+
+.WorkoutField_sets,
+.WorkoutField_reps {
+  width: 10%;
+}

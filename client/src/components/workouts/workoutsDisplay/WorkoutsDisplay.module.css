@@ -1,0 +1,6 @@
+.WorkoutsDisplay {
+  border: 1px solid thistle;
+  flex: 1;
+
+  height: 100%;
+}

@@ -1,0 +1,21 @@
+.FloatPart {
+  width: 15%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: tomato;
+  border-radius: 20px;
+}
+
+.floatNavigation {
+  display: flex;
+  list-style: none;
+}
+
+.floatNavigation a {
+  text-decoration: none;
+  margin: 20px;
+  color: wheat;
+  font-size: 1.2em;
+}

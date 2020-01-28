@@ -1,0 +1,19 @@
+.DaysNavigation {
+  width: 150px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-around;
+}
+
+.DayButton {
+  width: 100px;
+  height: 60px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid teal;
+  cursor: pointer;
+}
