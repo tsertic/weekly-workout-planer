@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import WeightWorkoutForm from './weightWorkoutForm/WeightWorkoutForm';
+import CardioWorkoutForm from './cardioWorkoutForm/CardioWorkoutForm';
 
 const AddWorkout = props => {
   const [workoutType, setWorkoutType] = useState(null);
@@ -26,10 +28,13 @@ const AddWorkout = props => {
   const changeWorkoutType = e => {
     setWorkoutType(e.target.value);
   };
-
+  const handleFormSubmit = e => {
+    e.preventDefault();
+    alert('form submited');
+  };
   return (
     <div>
-      Add Workout
+      <p>Add Workout</p>
       <div>
         <p>Select type of Workout: </p>
         <button onClick={changeWorkoutType} value="cardio">
@@ -40,15 +45,21 @@ const AddWorkout = props => {
         </button>
       </div>
       <div>
-        <form>
-          <input
-            name="name"
-            type="text"
-            placeholder="name"
-            value={weightWorkout.name}
-            onChange={handleChange}
+        {workoutType === null ? (
+          ' '
+        ) : workoutType === 'weight' ? (
+          <WeightWorkoutForm
+            weightWorkout={weightWorkout}
+            handleChange={handleChange}
+            handleFormSubmit={handleFormSubmit}
           />
-        </form>
+        ) : (
+          <CardioWorkoutForm
+            cardioWorkout={cardioWorkout}
+            handleChange={handleChange}
+            handleFormSubmit={handleFormSubmit}
+          />
+        )}
       </div>
     </div>
   );

@@ -11,7 +11,12 @@ import AddWorkout from './addWorkout/AddWorkout';
 const WorkoutsDashboard = () => {
   const workoutsContext = useContext(WorkoutsContext);
 
-  const { showAddNewWorkout, toggleShowNewWorkout } = workoutsContext;
+  const {
+    showAddNewWorkout,
+    toggleShowNewWorkout,
+    currentDay,
+    daysInWeek
+  } = workoutsContext;
   const handleToggleAddWorkout = () => {
     toggleShowNewWorkout();
   };
@@ -28,7 +33,7 @@ const WorkoutsDashboard = () => {
       <DaysNavigation />
       <div className={styles.right_side}>
         <div className={styles.header}>
-          <span>CURRENT DAY</span>{' '}
+          <span className={styles.header_title}>{daysInWeek[currentDay]}</span>{' '}
           <button
             className={styles.addNewWorkoutButton}
             onClick={handleToggleAddWorkout}

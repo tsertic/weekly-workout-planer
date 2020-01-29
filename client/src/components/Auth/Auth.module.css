@@ -1,0 +1,54 @@
+.AuthPage {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 500px;
+}
+
+.AuthPage__info {
+  position: relative;
+  color: white;
+  width: 60%;
+  height: 100%;
+  border-radius: 10px;
+  border: 2px solid #3385c6;
+  background-color: rgba(66, 121, 163, 0.9);
+}
+.AuthPage__info__title {
+  text-align: center;
+  margin: 20px 0;
+  font-size: 2.2em;
+}
+
+.AuthPage__info__description {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40%;
+}
+.AuthPage__info__description__text {
+  width: 49%;
+}
+.AuthPage__info__description__text li {
+  font-size: 1.1em;
+  margin: 10px 5px;
+}
+
+.AuthPage__info__img {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  width: 200px;
+  height: 200px;
+  background: url('./../../assets/workoutPngScaled.png');
+  opacity: 0.7;
+  background-size: contain;
+}
+
+.AuthPage__form {
+  width: 37%;
+  height: 100%;
+  border-radius: 10px;
+  border: 2px solid #3385c6;
+  background-color: white;
+}

@@ -6,10 +6,10 @@ const FloatPart = () => {
     <div className={styles.FloatPart}>
       <ul className={styles.floatNavigation}>
         <li>
-          <Link to="/">LogIn</Link>
+          <Link to="/login">LogIn</Link>
         </li>
         <li>
-          <Link to="/">SignIn</Link>
+          <Link to="/signin">SignIn</Link>
         </li>
       </ul>
     </div>

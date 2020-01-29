@@ -2,12 +2,16 @@
   margin: 5px 10px;
   height: 50px;
 
+  color: white;
   display: flex;
 }
 .information {
   display: flex;
   align-items: center;
-  border: 2px solid rosybrown;
+  justify-content: space-around;
+  border: 2px solid #4279a3;
+  background-color: #476c8a;
+  border-radius: 5px;
   width: 90%;
 }
 .deleteBox {
@@ -15,12 +19,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: rgb(146, 57, 41);
 }
-.WorkoutField_title {
+.WorkoutField_box {
+  position: relative;
   width: 20%;
+  padding-left: 50px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-.WorkoutField_sets,
-.WorkoutField_reps {
-  width: 10%;
+.WorkoutField_box_title {
+  position: absolute;
+  font-size: 0.9em;
+  color: #6db3ec;
+  top: 2px;
+  left: 3px;
 }

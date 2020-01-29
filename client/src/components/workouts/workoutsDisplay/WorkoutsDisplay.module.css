@@ -1,6 +1,6 @@
 .WorkoutsDisplay {
-  border: 1px solid thistle;
+  border-radius: 10px;
   flex: 1;
 
-  height: 100%;
+  height: 90%;
 }

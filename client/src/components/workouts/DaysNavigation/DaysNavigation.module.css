@@ -1,10 +1,11 @@
 .DaysNavigation {
-  width: 150px;
+  width: 130px;
   height: 100%;
   display: flex;
   flex-direction: column;
-
+  border-right: 2px solid #476c8a;
   justify-content: space-around;
+  color: rgb(225, 240, 255);
 }
 
 .DayButton {
@@ -14,6 +15,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1px solid teal;
+  border: 2px solid #3385c6;
   cursor: pointer;
+
+  transition: 0.2s ease-in-out all;
+}
+.DayButton:hover {
+  background-color: #3385c6;
+}
+.DayButton:active {
+  border: 2px solid #3385c6;
 }

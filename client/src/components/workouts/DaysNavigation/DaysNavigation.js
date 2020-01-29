@@ -4,7 +4,7 @@ import WorkoutsContext from './../../../context/workouts/workoutsContext';
 const DaysNavigation = () => {
   const workoutsContext = useContext(WorkoutsContext);
 
-  const { changeDay } = workoutsContext;
+  const { changeDay, daysInWeek } = workoutsContext;
 
   const dayInWeak = [0, 1, 2, 3, 4, 5, 6];
 
@@ -18,7 +18,7 @@ const DaysNavigation = () => {
         className={styles.DayButton}
         onClick={handleChangeDay.bind(this, day)}
       >
-        {day}
+        {daysInWeek[day].slice(0, 3).toUpperCase()}
       </div>
     );
   });

@@ -11,34 +11,37 @@ const WorkoutsState = props => {
         id: 1,
         name: 'bench press',
         description: 'Pushin bar up',
-        sets: '4',
-        reps: '8',
-        weight: '50',
-        type: 'power',
+        power: { sets: 3, reps: 6, weight: 43 },
         dayInWeek: 1
       },
       {
         id: 2,
         name: 'pull up',
         description: 'Pushin bar up',
-        sets: '4',
-        reps: '8',
-        weight: '50',
-        type: 'power',
+        power: { sets: 3, reps: 3, weight: 44 },
         dayInWeek: 5
       },
       {
         id: 3,
         name: 'leg extension',
         description: 'Pushin bar up',
-        sets: '4',
-        reps: '8',
-        weight: '50',
-        type: 'power',
+        cardio: {
+          duration: 0,
+          distance: 24
+        },
         dayInWeek: 5
       }
     ],
     showAddNewWorkout: false,
+    daysInWeek: [
+      'Sunday',
+      'Monday',
+      'Tuesday',
+      'Wednesday',
+      'Thursday',
+      'Friday',
+      'Saturday'
+    ],
     currentDay: new Date().getDay()
   };
 
@@ -71,6 +74,7 @@ const WorkoutsState = props => {
         workouts: state.workouts,
         currentDay: state.currentDay,
         showAddNewWorkout: state.showAddNewWorkout,
+        daysInWeek: state.daysInWeek,
         toggleShowNewWorkout,
         changeDay
       }}
