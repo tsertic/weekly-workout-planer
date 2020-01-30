@@ -1,11 +1,12 @@
 .FloatPart {
-  width: 15%;
+  width: 30%;
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #4279a3;
-  border-radius: 20px;
+  background-image: linear-gradient(120deg, #76c1e4 0%, #4279a3 100%);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
 }
 
 .floatNavigation {

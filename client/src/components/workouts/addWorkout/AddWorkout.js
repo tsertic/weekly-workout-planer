@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import WeightWorkoutForm from './weightWorkoutForm/WeightWorkoutForm';
 import CardioWorkoutForm from './cardioWorkoutForm/CardioWorkoutForm';
-
+import styles from './AddWorkout.module.css';
 const AddWorkout = props => {
   const [workoutType, setWorkoutType] = useState(null);
   const [cardioWorkout, setCardioWorkout] = useState({
@@ -33,16 +33,27 @@ const AddWorkout = props => {
     alert('form submited');
   };
   return (
-    <div>
-      <p>Add Workout</p>
-      <div>
-        <p>Select type of Workout: </p>
-        <button onClick={changeWorkoutType} value="cardio">
-          Cardio
-        </button>
-        <button onClick={changeWorkoutType} value="weight">
-          weight
-        </button>
+    <div className={styles.AddWorkout}>
+      <div className={styles.AddWorkout__typeBox}>
+        <p className={styles.AddWorkout__typeBox__title}>
+          Select type of Workout:{' '}
+        </p>
+        <div className={styles.AddWorkout__typeBox__buttonContainer}>
+          <button
+            onClick={changeWorkoutType}
+            value="cardio"
+            className={styles.type__btn__cardio}
+          >
+            Cardio
+          </button>
+          <button
+            onClick={changeWorkoutType}
+            value="weight"
+            className={styles.type__btn__weight}
+          >
+            Weight
+          </button>
+        </div>
       </div>
       <div>
         {workoutType === null ? (

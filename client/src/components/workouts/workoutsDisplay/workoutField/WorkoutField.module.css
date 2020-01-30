@@ -4,6 +4,7 @@
 
   color: white;
   display: flex;
+  justify-content: space-between;
 }
 .information {
   display: flex;
@@ -19,8 +20,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgb(146, 57, 41);
+  color: #b23e35;
+  font-size: 2em;
+  cursor: pointer;
 }
+
 .WorkoutField_box {
   position: relative;
   width: 20%;

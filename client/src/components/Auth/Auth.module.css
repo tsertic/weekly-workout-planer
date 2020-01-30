@@ -7,12 +7,13 @@
 
 .AuthPage__info {
   position: relative;
-  color: white;
-  width: 60%;
+  color: #322f2f;
+  width: 65%;
   height: 100%;
   border-radius: 10px;
   border: 2px solid #3385c6;
   background-color: rgba(66, 121, 163, 0.9);
+  background-image: linear-gradient(20deg, #4279a3 24%, #76c1e4 100%);
 }
 .AuthPage__info__title {
   text-align: center;
@@ -40,15 +41,16 @@
   left: 20px;
   width: 200px;
   height: 200px;
-  background: url('./../../assets/workoutPngScaled.png');
+  background: url('./../../assets/Calendar.png');
   opacity: 0.7;
   background-size: contain;
 }
 
 .AuthPage__form {
-  width: 37%;
+  width: 30%;
   height: 100%;
-  border-radius: 10px;
+
   border: 2px solid #3385c6;
-  background-color: white;
+  border-radius: 10px;
+  background-image: linear-gradient(120deg, #59b3dd 0%, #3385c6 100%);
 }

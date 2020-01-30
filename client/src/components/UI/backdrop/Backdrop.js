@@ -9,7 +9,7 @@ const Backdrop = ({ onClick }) => {
         left: 0,
         height: '100vh',
         width: '100%',
-        background: 'rgba(0,0,0,0.7)',
+        background: 'rgba(14, 152, 170, 0.7)',
         zIndex: 20
       }}
       onClick={onClick}

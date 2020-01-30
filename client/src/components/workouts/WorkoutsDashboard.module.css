@@ -8,6 +8,7 @@
   border-radius: 10px;
   background: rgba(127, 142, 158, 0.9);
   overflow: auto;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .right_side {
@@ -35,8 +36,14 @@
   border-top: none;
   background: #3385c6;
 }
-.addNewWorkoutButton {
+.AddNewWorkoutButton {
   position: absolute;
-  top: 10;
-  right: 10px;
+  top: -10px;
+  right: 25px;
+  cursor: pointer;
+}
+.AddNewWorkoutButton i {
+  color: white;
+  text-shadow: 2px 2px 2px #4279a3;
+  font-size: 2em;
 }

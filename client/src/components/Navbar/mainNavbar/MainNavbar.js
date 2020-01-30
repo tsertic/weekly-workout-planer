@@ -1,18 +1,19 @@
 import React from 'react';
 import styles from './MainNavbar.module.css';
 import { Link } from 'react-router-dom';
+import WWP_Logo from './../../../assets/WWP_Logo.png';
 const MainNavbar = () => {
   return (
     <div className={styles.MainNavbar}>
-      <div className={styles.logo}>Logo</div>
-      <ul className={styles.mainNavigation}>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/">About</Link>
-        </li>
-      </ul>
+      <div className={styles.logo}>
+        <img src={WWP_Logo} />
+      </div>
+      <div className={styles.MainNavbar__quote}>
+        <cite>
+          ” Success usually comes to those who are too busy to be looking for
+          it. „
+        </cite>
+      </div>
     </div>
   );
 };

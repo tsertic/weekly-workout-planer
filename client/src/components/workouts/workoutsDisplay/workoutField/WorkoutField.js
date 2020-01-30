@@ -49,7 +49,9 @@ const WorkoutField = props => {
           </Fragment>
         )}
       </div>
-      <div className={styles.deleteBox}>Delete</div>
+      <div className={styles.deleteBox}>
+        <i class="fas fa-trash"></i>
+      </div>
     </div>
   );
 };

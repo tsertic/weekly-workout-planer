@@ -1,4 +1,4 @@
-import React, { useContext, Fragment } from 'react';
+import React, { useContext, useEffect, Fragment } from 'react';
 import styles from './WorkoutsDashboard.module.css';
 import DaysNavigation from './DaysNavigation/DaysNavigation';
 import WorkoutsDisplay from './workoutsDisplay/WorkoutsDisplay';
@@ -6,17 +6,26 @@ import WorkoutsContext from '../../context/workouts/workoutsContext';
 import Modal from '../UI/Modal/Modal';
 import Backdrop from '../UI/backdrop/Backdrop';
 import AddWorkout from './addWorkout/AddWorkout';
+import AuthContext from '../../context/auth/authContext';
 //context
 
 const WorkoutsDashboard = () => {
   const workoutsContext = useContext(WorkoutsContext);
+  const authContext = useContext(AuthContext);
 
+  const { loadUser } = authContext;
   const {
     showAddNewWorkout,
     toggleShowNewWorkout,
     currentDay,
     daysInWeek
   } = workoutsContext;
+
+  useEffect(() => {
+    loadUser();
+    //eslint-disable-next-line
+  }, []);
+
   const handleToggleAddWorkout = () => {
     toggleShowNewWorkout();
   };
@@ -33,13 +42,14 @@ const WorkoutsDashboard = () => {
       <DaysNavigation />
       <div className={styles.right_side}>
         <div className={styles.header}>
-          <span className={styles.header_title}>{daysInWeek[currentDay]}</span>{' '}
-          <button
-            className={styles.addNewWorkoutButton}
+          <span className={styles.header_title}>{daysInWeek[currentDay]}</span>
+          <div
             onClick={handleToggleAddWorkout}
+            className={styles.AddNewWorkoutButton}
+            title="Add new workout"
           >
-            ADD NEW WORKOUT
-          </button>
+            <i class="fas fa-plus"></i>
+          </div>
         </div>
         <WorkoutsDisplay />
       </div>

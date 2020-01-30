@@ -6,7 +6,9 @@ import {
   AUTH_ERROR,
   LOGIN_SUCCESS,
   LOGIN_FAIL,
-  LOGOUT
+  LOGOUT,
+  REGISTER_FORM,
+  LOGIN_FORM
 } from './../types';
 
 export default (state, action) => {
@@ -47,6 +49,16 @@ export default (state, action) => {
         loading: false,
         user: null,
         error: action.payload
+      };
+    case REGISTER_FORM:
+      return {
+        ...state,
+        currentAuthForm: 'register'
+      };
+    case LOGIN_FORM:
+      return {
+        ...state,
+        currentAuthForm: 'login'
       };
     case CLEAR_ERRORS:
       return {

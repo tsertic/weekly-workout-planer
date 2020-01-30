@@ -1,0 +1,78 @@
+.AddWorkout {
+  background: rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: #c5ecfd;
+  height: 100%;
+}
+
+.title {
+  color: rgba(14, 152, 170, 0.8);
+}
+
+.AddWorkout__typeBox {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 15px 0;
+}
+.AddWorkout__typeBox__title {
+  text-align: center;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+.AddWorkout__typeBox__buttonContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* Type buttons styles */
+.type__btn__weight {
+  box-shadow: inset 0px 1px 0px 0px #f7c5c0;
+  background: linear-gradient(to bottom, #fc8d83 5%, #e4685d 100%);
+  background-color: #fc8d83;
+  border-radius: 6px;
+  border: 1px solid #d83526;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 31px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #b23e35;
+}
+.type__btn__weight:hover {
+  background: linear-gradient(to bottom, #e4685d 5%, #fc8d83 100%);
+  background-color: #e4685d;
+}
+.type__btn__weight:active {
+  position: relative;
+  top: 1px;
+}
+
+.type__btn__cardio {
+  box-shadow: inset 0px 1px 0px 0px #f7c5c0;
+  background: linear-gradient(to bottom, #91e66a 5%, #388b17 100%);
+  background-color: #91e66a;
+  border-radius: 6px;
+  border: 1px solid #50e664;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 31px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #b23e35;
+}
+.type__btn__cardio:hover {
+  background: linear-gradient(to bottom, #388b17 5%, #91e66a 100%);
+  background-color: #388b17;
+}
+.type__btn__cardio:active {
+  position: relative;
+  top: 1px;
+}

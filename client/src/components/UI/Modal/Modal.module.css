@@ -3,8 +3,9 @@
   position: absolute;
   width: 500px;
   height: 500px;
-  top: 100px;
+  top: 15vh;
   left: calc(50% - 250px);
   background: white;
-  border: 2px solid blueviolet;
+  border: 2px solid #c5ecfd;
+  border-radius: 10px;
 }
