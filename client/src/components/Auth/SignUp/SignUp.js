@@ -7,6 +7,15 @@ const SignUp = props => {
       <h1 className={styles.SignUp__title}>Sign Up</h1>
       <form onSubmit={handleSubmit}>
         <div className={styles.SignUp__inputBox}>
+          <label>Name: </label>
+          <input
+            type="text"
+            name="name"
+            onChange={onInputChange}
+            value={signupInfo.name}
+          />
+        </div>
+        <div className={styles.SignUp__inputBox}>
           <label>Email: </label>
           <input
             type="text"

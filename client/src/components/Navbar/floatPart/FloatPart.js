@@ -28,10 +28,18 @@ const FloatPart = props => {
           <li onClick={handleLogOut}>Sign Out</li>
         ) : (
           <Fragment>
-            <button onClick={handleChangeFormClick} value="login">
+            <button
+              className={styles.FloatPart__authBtn}
+              onClick={handleChangeFormClick}
+              value="login"
+            >
               LogIn
             </button>
-            <button onClick={handleChangeFormClick} value="signup">
+            <button
+              className={styles.FloatPart__authBtn}
+              onClick={handleChangeFormClick}
+              value="signup"
+            >
               SignUp
             </button>
           </Fragment>

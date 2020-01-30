@@ -8,11 +8,10 @@ const AuthPage = props => {
   const authContext = useContext(AuthContext);
   const {
     login,
+    register,
     isAuthenticated,
     loadUser,
-    currentAuthForm,
-    registerForm,
-    loginForm
+    currentAuthForm
   } = authContext;
 
   //if it is auth then redirect to home page
@@ -28,6 +27,7 @@ const AuthPage = props => {
     password: ''
   });
   const [signupInfo, setRegisterInfo] = useState({
+    name: '',
     email: '',
     password: '',
     confirmPassword: ''
@@ -43,11 +43,23 @@ const AuthPage = props => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    const { email, password } = loginInfo;
-    login({
-      email,
-      password
-    });
+    if (currentAuthForm === 'login') {
+      const { email, password } = loginInfo;
+      login({
+        email,
+        password
+      });
+    }
+    if (currentAuthForm === 'register') {
+      const { name, email, password, confirmPassword } = signupInfo;
+      if (password === confirmPassword) {
+        register({
+          name,
+          email,
+          password
+        });
+      }
+    }
   };
 
   return (
