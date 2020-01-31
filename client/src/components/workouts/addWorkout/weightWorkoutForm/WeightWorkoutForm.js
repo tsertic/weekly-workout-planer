@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './WeightWorkoutForm.module.css';
 const WeightWorkoutForm = props => {
   const { weightWorkout, handleChange, handleFormSubmit } = props;
-
+  console.log(weightWorkout);
   return (
     <form onSubmit={handleFormSubmit} className={styles.WeightWorkoutForm}>
       <p className={styles.WeightWorkoutForm__title}>Weight Workout</p>
@@ -50,9 +50,21 @@ const WeightWorkoutForm = props => {
             onChange={handleChange}
           />
         </div>
+        <div className={styles.inputFields__box}>
+          <label>Day in Week: </label>
+          <select onChange={handleChange} name="dayInWeek">
+            <option value={1}>Mon</option>
+            <option value={2}>Tue</option>
+            <option value={3}>Wed</option>
+            <option value={4}>Thu</option>
+            <option value={5}>Fri</option>
+            <option value={6}>Sat</option>
+            <option value={0}>Sun</option>
+          </select>
+        </div>
       </div>
 
-      <div className={styles.btn}>Add Workout</div>
+      <button className={styles.btn}>Add Workout</button>
     </form>
   );
 };

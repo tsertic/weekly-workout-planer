@@ -1,8 +1,11 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useContext } from 'react';
 import styles from './WorkoutField.module.css';
+import WorkoutsContext from '../../../../context/workouts/workoutsContext';
 
 const WorkoutField = props => {
-  const { name, power, cardio } = props.workout;
+  const workoutsContext = useContext(WorkoutsContext);
+  const { deleteWorkout } = workoutsContext;
+  const { name, power, cardio, _id } = props.workout;
 
   return (
     <div className={styles.WorkoutField}>
@@ -49,7 +52,7 @@ const WorkoutField = props => {
           </Fragment>
         )}
       </div>
-      <div className={styles.deleteBox}>
+      <div className={styles.deleteBox} onClick={() => deleteWorkout(_id)}>
         <i class="fas fa-trash"></i>
       </div>
     </div>

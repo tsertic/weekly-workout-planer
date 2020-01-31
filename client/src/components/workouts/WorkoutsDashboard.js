@@ -18,11 +18,13 @@ const WorkoutsDashboard = () => {
     showAddNewWorkout,
     toggleShowNewWorkout,
     currentDay,
-    daysInWeek
+    daysInWeek,
+    getWorkouts
   } = workoutsContext;
 
   useEffect(() => {
     loadUser();
+    getWorkouts();
     //eslint-disable-next-line
   }, []);
 

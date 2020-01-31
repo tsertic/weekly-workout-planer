@@ -1,0 +1,85 @@
+.WeightWorkoutForm {
+  display: flex;
+  flex-direction: column;
+  max-width: 550px;
+  margin: 0 auto;
+
+  padding: 30px;
+  border-radius: 5px;
+}
+.WeightWorkoutForm__title {
+  text-align: center;
+  color: #fc8d83;
+}
+.inputFields {
+  display: flex;
+  flex-direction: column;
+  margin-right: 4%;
+  width: 80%;
+}
+
+.inputFields {
+  margin: 10px 0;
+  background: transparent;
+  border: 0px;
+
+  padding: 10px;
+  color: #c5ecfd;
+  outline: none;
+}
+.input {
+  background: transparent;
+  border: 0px;
+  border-bottom: 2px solid #c5ecfd;
+  padding: 2px;
+  color: #c5ecfd;
+  width: 70%;
+  outline: none;
+}
+.inputFields__box label {
+  display: block;
+  width: 30%;
+}
+.inputFields__box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin: 5px 0;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: #c5ecfd;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #c5ecfd;
+}
+:-ms-input-placeholder {
+  /* IE 10+ */
+  color: #c5ecfd;
+}
+
+.btn {
+  margin: 20px auto 0;
+  width: 40%;
+  background: #39b7dd;
+  text-align: center;
+  padding: 15px;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 600px) {
+  .contact-form {
+    flex-direction: column;
+  }
+
+  .inputFields,
+  .msg {
+    width: 100%;
+  }
+}

@@ -23,6 +23,10 @@ const workoutSchema = mongoose.Schema({
       type: Number
     }
   },
+  dayInWeek: {
+    type: Number,
+    default: 0
+  },
   cardio: {
     duration: {
       type: Number

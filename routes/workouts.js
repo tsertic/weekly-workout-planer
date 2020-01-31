@@ -33,7 +33,7 @@ router.post(
     const errors = validationResult(req);
     if (!errors.isEmpty()) res.status(422).json({ errors: errors.array() });
 
-    const { name, description, power, cardio } = req.body;
+    const { name, description, power, cardio, dayInWeek } = req.body;
 
     try {
       let newWorkout = {
@@ -43,12 +43,13 @@ router.post(
       if (description) newWorkout.description = description;
       if (power) newWorkout.power = power;
       if (cardio) newWorkout.cardio = cardio;
+      if (dayInWeek) newWorkout.dayInWeek = dayInWeek;
 
       newWorkout = new Workout(newWorkout);
 
-      await newWorkout.save();
+      const savedNewWorkout = await newWorkout.save();
 
-      res.json(newWorkout);
+      res.json(savedNewWorkout);
     } catch (err) {
       console.error(err.message);
       return res.status(401).json({ msg: 'Error with ' });
