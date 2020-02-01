@@ -6,6 +6,9 @@ const bcrypt = require('bcryptjs');
 const config = require('config');
 const { check, validationResult } = require('express-validator');
 const User = require('./../models/User');
+
+const jwtSecret = process.env.jwtSecret || config.get('jwtSecret');
+
 //@route GET /api/auth
 //@desc retrive user data except password
 //@type PRIVATE
@@ -50,15 +53,10 @@ router.post(
         }
       };
 
-      jwt.sign(
-        payload,
-        config.get('jwtSecret'),
-        { expiresIn: 3600 },
-        (err, token) => {
-          if (err) throw err;
-          return res.json(token);
-        }
-      );
+      jwt.sign(payload, jwtSecret, { expiresIn: 3600 }, (err, token) => {
+        if (err) throw err;
+        return res.json(token);
+      });
     } catch (err) {
       console.error(err.message);
       return res.status(401).json({ msg: 'Error with loging in' });

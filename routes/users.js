@@ -5,6 +5,9 @@ const bcrypt = require('bcryptjs');
 const config = require('config');
 const { check, validationResult } = require('express-validator');
 const User = require('./../models/User');
+
+const jwtSecret = process.env.jwtSecret || config.get('jwtSecret');
+
 //@route POST /api/users
 //@desc Register a user
 //@type PUBLIC
@@ -48,15 +51,10 @@ router.post(
         }
       };
 
-      jwt.sign(
-        payload,
-        config.get('jwtSecret'),
-        { expiresIn: 5000 },
-        (err, token) => {
-          if (err) throw err;
-          return res.json(token);
-        }
-      );
+      jwt.sign(payload, jwtSecret, { expiresIn: 5000 }, (err, token) => {
+        if (err) throw err;
+        return res.json(token);
+      });
     } catch (err) {
       console.error(err.message);
       return res.status(401).json({ msg: 'Error with creating user' });

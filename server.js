@@ -2,9 +2,6 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const db = require('./config/db');
-
-console.log(process.env);
-
 //database
 db();
 

@@ -1,12 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
-const config = require('config');
 const { check, validationResult } = require('express-validator');
-const User = require('./../models/User');
 const Workout = require('./../models/Workout');
 const auth = require('./../middlewares/auth');
+
 //@route GET /api/workouts
 //@desc Get workouts
 //@type PRIVATE
