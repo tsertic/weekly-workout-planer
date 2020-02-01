@@ -1,19 +1,8 @@
-import {
-  REGISTER_SUCCESS,
-  REGISTER_FAIL,
-  CLEAR_ERRORS,
-  USER_LOADED,
-  AUTH_ERROR,
-  LOGIN_SUCCESS,
-  LOGIN_FAIL,
-  LOGOUT,
-  REGISTER_FORM,
-  LOGIN_FORM
-} from './../types';
+import { authTypes } from './../types';
 
 export default (state, action) => {
   switch (action.type) {
-    case USER_LOADED:
+    case authTypes.USER_LOADED:
       return {
         ...state,
         isAuthenticated: true,
@@ -21,7 +10,7 @@ export default (state, action) => {
         user: action.payload
       };
 
-    case REGISTER_SUCCESS:
+    case authTypes.REGISTER_SUCCESS:
       localStorage.setItem('token', action.payload);
       return {
         ...state,
@@ -29,7 +18,7 @@ export default (state, action) => {
         isAuthenticated: true,
         loading: false
       };
-    case LOGIN_SUCCESS:
+    case authTypes.LOGIN_SUCCESS:
       localStorage.setItem('token', action.payload);
       return {
         ...state,
@@ -37,10 +26,10 @@ export default (state, action) => {
         isAuthenticated: true,
         loading: false
       };
-    case REGISTER_FAIL:
-    case AUTH_ERROR:
-    case LOGIN_FAIL:
-    case LOGOUT:
+    case authTypes.REGISTER_FAIL:
+    case authTypes.AUTH_ERROR:
+    case authTypes.LOGIN_FAIL:
+    case authTypes.LOGOUT:
       localStorage.removeItem('token');
       return {
         ...state,
@@ -50,17 +39,17 @@ export default (state, action) => {
         user: null,
         error: action.payload
       };
-    case REGISTER_FORM:
+    case authTypes.REGISTER_FORM:
       return {
         ...state,
         currentAuthForm: 'register'
       };
-    case LOGIN_FORM:
+    case authTypes.LOGIN_FORM:
       return {
         ...state,
         currentAuthForm: 'login'
       };
-    case CLEAR_ERRORS:
+    case authTypes.CLEAR_ERRORS:
       return {
         ...state,
         error: null

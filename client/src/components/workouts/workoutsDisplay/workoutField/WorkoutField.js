@@ -53,7 +53,7 @@ const WorkoutField = props => {
         )}
       </div>
       <div className={styles.deleteBox} onClick={() => deleteWorkout(_id)}>
-        <i class="fas fa-trash"></i>
+        <i className="fas fa-trash"></i>
       </div>
     </div>
   );

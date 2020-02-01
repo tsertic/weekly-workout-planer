@@ -4,11 +4,12 @@ import CardioWorkoutForm from './cardioWorkoutForm/CardioWorkoutForm';
 import styles from './AddWorkout.module.css';
 import WorkoutsContext from '../../../context/workouts/workoutsContext';
 
-const AddWorkout = props => {
+const AddWorkout = () => {
+  //context
   const workoutsContext = useContext(WorkoutsContext);
-
   const { addWorkout, toggleShowNewWorkout } = workoutsContext;
 
+  //states
   const [workoutType, setWorkoutType] = useState(null);
   const [cardioWorkout, setCardioWorkout] = useState({
     name: '',
@@ -24,6 +25,7 @@ const AddWorkout = props => {
     dayInWeek: 0
   });
 
+  //function
   const handleChange = e => {
     console.log(workoutType);
     if (workoutType === 'cardio') {

@@ -4,8 +4,8 @@ const CardioWorkoutForm = props => {
   const { cardioWorkout, handleChange, handleFormSubmit } = props;
 
   return (
-    <form onSubmit={handleFormSubmit} className={styles.WeightWorkoutForm}>
-      <p className={styles.WeightWorkoutForm__title}>Cardio Workout</p>
+    <form onSubmit={handleFormSubmit} className={styles.CardioWorkoutForm}>
+      <p className={styles.CardioWorkoutForm__title}>Cardio Workout</p>
       <div className={styles.inputFields}>
         <div className={styles.inputFields__box}>
           <label>Name: </label>

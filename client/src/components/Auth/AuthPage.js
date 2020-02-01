@@ -5,6 +5,7 @@ import Login from './Login/Login';
 import SignUp from './SignUp/SignUp';
 
 const AuthPage = props => {
+  //context
   const authContext = useContext(AuthContext);
   const {
     login,
@@ -14,14 +15,17 @@ const AuthPage = props => {
     currentAuthForm
   } = authContext;
 
+  //effect
   //if it is auth then redirect to home page
   useEffect(() => {
     loadUser();
     if (isAuthenticated) {
       props.history.push('/');
     }
+    // eslint-disable-next-line
   }, [isAuthenticated, props.history]);
 
+  //states
   const [loginInfo, setLoginInfo] = useState({
     email: '',
     password: ''
@@ -33,6 +37,7 @@ const AuthPage = props => {
     confirmPassword: ''
   });
 
+  //functions
   const onInputChange = e => {
     if (currentAuthForm === 'login') {
       setLoginInfo({ ...loginInfo, [e.target.name]: e.target.value });

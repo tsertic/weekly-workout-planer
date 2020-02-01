@@ -1,14 +1,16 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styles from './App.module.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+//components
 import Navbar from './components/Navbar/Navbar';
-import WorkoutsState from './context/workouts/workoutsState';
-
 import WorkoutsDashboard from './components/workouts/WorkoutsDashboard';
 import AuthPage from './components/Auth/AuthPage';
-import AuthState from './context/auth/AuthState';
 import PrivateRoute from './components/router/PrivateRouter';
+//utils
 import setAuthToken from './components/utils/setAuthToken';
+//context imports
+import AuthState from './context/auth/AuthState';
+import WorkoutsState from './context/workouts/workoutsState';
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);

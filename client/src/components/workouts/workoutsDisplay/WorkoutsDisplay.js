@@ -7,10 +7,12 @@ const WorkoutsDisplay = () => {
   const workoutsContext = useContext(WorkoutsContext);
   const { workouts, currentDay } = workoutsContext;
 
-  const renderWorkouts = workouts.map(workout => {
-    if (workout.dayInWeek === currentDay) {
-      return <WorkoutField workout={workout} />;
-    }
+  const filtredWorkouts = workouts.filter(
+    workout => workout.dayInWeek === currentDay
+  );
+
+  const renderWorkouts = filtredWorkouts.map(workout => {
+    return <WorkoutField workout={workout} key={workout._id} />;
   });
 
   return <div className={styles.WorkoutsDisplay}>{renderWorkouts}</div>;

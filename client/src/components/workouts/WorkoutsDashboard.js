@@ -50,7 +50,7 @@ const WorkoutsDashboard = () => {
             className={styles.AddNewWorkoutButton}
             title="Add new workout"
           >
-            <i class="fas fa-plus"></i>
+            <i className="fas fa-plus"></i>
           </div>
         </div>
         <WorkoutsDisplay />

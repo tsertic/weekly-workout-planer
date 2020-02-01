@@ -2,18 +2,7 @@ import React, { useReducer } from 'react';
 import AuthContext from './authContext';
 import authReducer from './authReducer';
 import axios from 'axios';
-import {
-  REGISTER_SUCCESS,
-  REGISTER_FAIL,
-  CLEAR_ERRORS,
-  USER_LOADED,
-  AUTH_ERROR,
-  LOGIN_FAIL,
-  LOGIN_SUCCESS,
-  LOGOUT,
-  REGISTER_FORM,
-  LOGIN_FORM
-} from './../types';
+import { authTypes } from './../types';
 import setAuthToken from '../../components/utils/setAuthToken';
 
 const AuthState = props => {
@@ -37,12 +26,11 @@ const AuthState = props => {
       try {
         const res = await axios.get('/api/auth');
         dispatch({
-          type: USER_LOADED,
+          type: authTypes.USER_LOADED,
           payload: res.data
         });
-        console.log('unutar load user');
       } catch (err) {
-        dispatch({ type: AUTH_ERROR });
+        /*  dispatch({ type: AUTH_ERROR }); */
       }
     }
   };
@@ -58,16 +46,16 @@ const AuthState = props => {
       const res = await axios.post('/api/users', formData, config);
 
       dispatch({
-        type: REGISTER_SUCCESS,
+        type: authTypes.REGISTER_SUCCESS,
         payload: res.data
       });
       loadUser();
     } catch (err) {
       console.log(err.response);
-      dispatch({
+      /*  dispatch({
         type: REGISTER_FAIL,
         payload: err.response.data.msg
-      });
+      }); */
     }
   };
   //Login User
@@ -81,27 +69,27 @@ const AuthState = props => {
     try {
       const res = await axios.post('/api/auth', formData, config);
       dispatch({
-        type: LOGIN_SUCCESS,
+        type: authTypes.LOGIN_SUCCESS,
         payload: res.data
       });
 
       loadUser();
     } catch (err) {
       dispatch({
-        type: LOGIN_FAIL,
+        type: authTypes.LOGIN_FAIL,
         payload: err.response.data.msg
       });
     }
   };
   //logout
-  const logout = () => dispatch({ type: LOGOUT });
+  const logout = () => dispatch({ type: authTypes.LOGOUT });
   //Clear Errors
-  const clearErrors = () => dispatch({ type: CLEAR_ERRORS });
+  const clearErrors = () => dispatch({ type: authTypes.CLEAR_ERRORS });
 
   //set to register form
-  const registerForm = () => dispatch({ type: REGISTER_FORM });
+  const registerForm = () => dispatch({ type: authTypes.REGISTER_FORM });
   //set to login form
-  const loginForm = () => dispatch({ type: LOGIN_FORM });
+  const loginForm = () => dispatch({ type: authTypes.LOGIN_FORM });
   return (
     <AuthContext.Provider
       value={{

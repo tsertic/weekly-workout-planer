@@ -1,4 +1,4 @@
-.WeightWorkoutForm {
+.CardioWorkoutForm {
   display: flex;
   flex-direction: column;
   max-width: 550px;
@@ -7,7 +7,7 @@
   padding: 30px;
   border-radius: 5px;
 }
-.WeightWorkoutForm__title {
+.CardioWorkoutForm__title {
   text-align: center;
   color: #fc8d83;
 }

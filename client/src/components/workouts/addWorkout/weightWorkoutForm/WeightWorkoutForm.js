@@ -2,10 +2,11 @@ import React from 'react';
 import styles from './WeightWorkoutForm.module.css';
 const WeightWorkoutForm = props => {
   const { weightWorkout, handleChange, handleFormSubmit } = props;
-  console.log(weightWorkout);
+
   return (
     <form onSubmit={handleFormSubmit} className={styles.WeightWorkoutForm}>
       <p className={styles.WeightWorkoutForm__title}>Weight Workout</p>
+
       <div className={styles.inputFields}>
         <div className={styles.inputFields__box}>
           <label>Name: </label>

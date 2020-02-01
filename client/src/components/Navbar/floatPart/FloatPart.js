@@ -1,13 +1,13 @@
 import React, { useContext, Fragment } from 'react';
 import styles from './FloatPart.module.css';
-import { Link } from 'react-router-dom';
 import AuthContext from '../../../context/auth/authContext';
 
 const FloatPart = props => {
+  //context
   const authContext = useContext(AuthContext);
-
   const { isAuthenticated, logout, registerForm, loginForm } = authContext;
 
+  //functions
   const handleLogOut = () => {
     logout();
   };
