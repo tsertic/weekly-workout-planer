@@ -70,7 +70,7 @@ const AuthPage = props => {
   return (
     <div className={styles.AuthPage}>
       <div className={styles.AuthPage__info}>
-        <p className={styles.AuthPage__info__title}>Weekly Workout Planer</p>
+        <p className={styles.AuthPage__info__title}>Weekly Workout Planner</p>
         <div className={styles.AuthPage__info__description}>
           <div className={styles.AuthPage__info__description__text}>
             <li>Plan your Weekly workouts</li>

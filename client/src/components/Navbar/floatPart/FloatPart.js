@@ -25,7 +25,9 @@ const FloatPart = props => {
     <div className={styles.FloatPart}>
       <ul className={styles.floatNavigation}>
         {isAuthenticated ? (
-          <li onClick={handleLogOut}>Sign Out</li>
+          <button className={styles.FloatPart__authBtn} onClick={handleLogOut}>
+            Sign Out
+          </button>
         ) : (
           <Fragment>
             <button

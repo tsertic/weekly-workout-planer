@@ -15,14 +15,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid #3385c6;
+  border: 2px solid var(--main-dark-color);
   cursor: pointer;
 
   transition: 0.2s ease-in-out all;
 }
 .DayButton:hover {
-  background-color: #3385c6;
+  background-color: var(--main-dark-color);
 }
 .DayButton:active {
-  border: 2px solid #3385c6;
+  border: 2px solid var(--main-dark-color);
+}
+
+@media (max-width: 600px) {
+  .DaysNavigation {
+    display: none;
+  }
 }

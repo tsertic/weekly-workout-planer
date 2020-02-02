@@ -11,20 +11,31 @@
   align-items: center;
   justify-content: space-around;
   border: 2px solid #4279a3;
-  background-color: #476c8a;
+  background-color: var(--secondary-blue-color);
   border-radius: 5px;
   width: 90%;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
 .deleteBox {
   width: 8%;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #b23e35;
   font-size: 2em;
   cursor: pointer;
 }
-
+.deleteBox i {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgb(243, 109, 109)),
+    to(rgb(199, 61, 61))
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(202, 73, 73, 0.473);
+}
 .WorkoutField_box {
   position: relative;
   width: 20%;
@@ -37,7 +48,8 @@
 .WorkoutField_box_title {
   position: absolute;
   font-size: 0.9em;
-  color: #6db3ec;
+  font-weight: bold;
+  color: var(--main-dark-color);
   top: 2px;
   left: 3px;
 }
