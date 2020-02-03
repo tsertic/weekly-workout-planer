@@ -15,19 +15,18 @@ const AddWorkout = () => {
     name: '',
     duration: 0,
     distance: 0,
-    dayInWeek: 0
+    dayInWeek: 1
   });
   const [weightWorkout, setWeightWorkout] = useState({
     name: '',
     sets: 0,
     reps: 0,
     weight: 0,
-    dayInWeek: 0
+    dayInWeek: 1
   });
 
   //function
   const handleChange = e => {
-    console.log(workoutType);
     if (workoutType === 'cardio') {
       setCardioWorkout({ ...cardioWorkout, [e.target.name]: e.target.value });
     } else if (workoutType === 'weight') {
@@ -67,6 +66,7 @@ const AddWorkout = () => {
         },
         dayInWeek: Number(cardioWorkout.dayInWeek)
       };
+
       addWorkout(newCardioWorkout);
       toggleShowNewWorkout();
     }

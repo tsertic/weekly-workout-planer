@@ -48,6 +48,7 @@ const WorkoutField = props => {
               value={workout.name}
               name="name"
               onChange={handleInputChange}
+              className={styles.WorkoutField__input}
             />
           ) : (
             <p className={styles.WorkoutField__description}>{name}</p>
@@ -63,6 +64,7 @@ const WorkoutField = props => {
                   value={workout.power.sets}
                   name="sets"
                   onChange={handleInputChange}
+                  className={styles.WorkoutField__input}
                 />
               ) : (
                 <p className={styles.WorkoutField__description}>{power.sets}</p>
@@ -70,28 +72,68 @@ const WorkoutField = props => {
             </div>
             <div className={styles.WorkoutField__box}>
               <p className={styles.WorkoutField__title}>reps:</p>
-              <p className={styles.WorkoutField__description}>{power.reps}</p>
+              {editing ? (
+                <input
+                  type="number"
+                  value={workout.power.reps}
+                  name="reps"
+                  onChange={handleInputChange}
+                  className={styles.WorkoutField__input}
+                />
+              ) : (
+                <p className={styles.WorkoutField__description}>{power.reps}</p>
+              )}
             </div>
             <div className={styles.WorkoutField__box}>
               <p className={styles.WorkoutField__title}>weight:</p>
-              <p className={styles.WorkoutField__description}>
-                {power.weight} kg
-              </p>
+              {editing ? (
+                <input
+                  type="number"
+                  value={workout.power.weight}
+                  name="weight"
+                  onChange={handleInputChange}
+                  className={styles.WorkoutField__input}
+                />
+              ) : (
+                <p className={styles.WorkoutField__description}>
+                  {power.weight} kg
+                </p>
+              )}
             </div>
           </Fragment>
         ) : (
           <Fragment>
             <div className={styles.WorkoutField__box}>
               <p className={styles.WorkoutField__title}>duration:</p>
-              <p className={styles.WorkoutField__description}>
-                {cardio.duration} [min]
-              </p>
+              {editing ? (
+                <input
+                  type="number"
+                  value={workout.cardio.duration}
+                  name="duration"
+                  onChange={handleInputChange}
+                  className={styles.WorkoutField__input}
+                />
+              ) : (
+                <p className={styles.WorkoutField__description}>
+                  {cardio.duration} [min]
+                </p>
+              )}
             </div>
             <div className={styles.WorkoutField__box}>
               <p className={styles.WorkoutField__title}>distance:</p>
-              <p className={styles.WorkoutField__description}>
-                {cardio.distance} [meters]
-              </p>
+              {editing ? (
+                <input
+                  type="number"
+                  value={workout.cardio.distance}
+                  name="distance"
+                  onChange={handleInputChange}
+                  className={styles.WorkoutField__input}
+                />
+              ) : (
+                <p className={styles.WorkoutField__description}>
+                  {cardio.distance} [meters]
+                </p>
+              )}
             </div>
           </Fragment>
         )}

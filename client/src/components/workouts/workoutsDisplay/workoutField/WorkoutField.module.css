@@ -25,6 +25,24 @@
   justify-content: center;
   align-items: center;
 }
+.WorkoutField__description {
+  position: absolute;
+  bottom: 5px;
+  font-size: 1em;
+}
+.WorkoutField__input {
+  position: absolute;
+  bottom: 4px;
+  border: none;
+  padding-bottom: 1px;
+  border-bottom: 1px solid var(--main-dark-color);
+  text-align: center;
+  color: white;
+  font-size: 1em;
+  background: transparent;
+  outline: none;
+  width: 80%;
+}
 .WorkoutField__title {
   position: absolute;
   font-size: 0.9em;
