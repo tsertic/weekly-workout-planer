@@ -52,16 +52,18 @@ const WeightWorkoutForm = props => {
           />
         </div>
         <div className={styles.inputFields__box}>
-          <label>Day in Week: </label>
-          <select onChange={handleChange} name="dayInWeek">
-            <option value={1}>Mon</option>
-            <option value={2}>Tue</option>
-            <option value={3}>Wed</option>
-            <option value={4}>Thu</option>
-            <option value={5}>Fri</option>
-            <option value={6}>Sat</option>
-            <option value={0}>Sun</option>
-          </select>
+          <lable>Day: </lable>
+          <div className={styles.box}>
+            <select onChange={handleChange} name="dayInWeek">
+              <option value={1}>Mon</option>
+              <option value={2}>Tue</option>
+              <option value={3}>Wed</option>
+              <option value={4}>Thu</option>
+              <option value={5}>Fri</option>
+              <option value={6}>Sat</option>
+              <option value={0}>Sun</option>
+            </select>
+          </div>
         </div>
       </div>
 

@@ -1,8 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
 import styles from './Auth.module.css';
-import AuthContext from '../../context/auth/authContext';
+//components
 import Login from './Login/Login';
 import SignUp from './SignUp/SignUp';
+//context
+import AuthContext from '../../context/auth/authContext';
 
 const AuthPage = props => {
   //context
@@ -69,17 +71,17 @@ const AuthPage = props => {
 
   return (
     <div className={styles.AuthPage}>
-      <div className={styles.AuthPage__info}>
-        <p className={styles.AuthPage__info__title}>Weekly Workout Planner</p>
-        <div className={styles.AuthPage__info__description}>
-          <div className={styles.AuthPage__info__description__text}>
+      <div className={styles.AuthPage__content}>
+        <p className={styles.AuthPage__title}>Weekly Workout Planner</p>
+        <div className={styles.AuthPage__description}>
+          <div className={styles.AuthPage__description__text}>
             <li>Plan your Weekly workouts</li>
             <li>Easy adding,removing and tracking</li>
             <li>Never be lost again</li>
           </div>
-          <div className={styles.AuthPage__info__description__gallery}></div>
+          <div className={styles.AuthPage__description__gallery}></div>
         </div>
-        <div className={styles.AuthPage__info__img}></div>
+        <div className={styles.AuthPage__img}></div>
       </div>
       <div className={styles.AuthPage__form}>
         {currentAuthForm === 'login' ? (

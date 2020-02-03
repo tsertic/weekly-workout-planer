@@ -9,12 +9,12 @@
   border-radius: 10px;
 }
 
-.floatNavigation {
+.FloatPart__navigation {
   display: flex;
   list-style: none;
 }
 
-.floatNavigation a {
+.FloatPart__navigation a {
   text-decoration: none;
   margin: 20px;
   color: wheat;

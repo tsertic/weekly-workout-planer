@@ -6,25 +6,44 @@
   display: flex;
   justify-content: space-between;
 }
-.information {
+.WorkoutField__information {
   display: flex;
   align-items: center;
   justify-content: space-around;
   border: 2px solid #4279a3;
   background-color: var(--secondary-blue-color);
   border-radius: 5px;
-  width: 90%;
+  width: 85%;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
-.deleteBox {
-  width: 8%;
+.WorkoutField__box {
+  position: relative;
+  width: 20%;
+  padding-left: 50px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.WorkoutField__title {
+  position: absolute;
+  font-size: 0.9em;
+  font-weight: bold;
+  color: var(--main-dark-color);
+  top: 2px;
+  left: 3px;
+}
+
+/* Edit and delete button styles */
+.WorkoutField__deleteBox {
+  width: 7%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2em;
   cursor: pointer;
 }
-.deleteBox i {
+.WorkoutField__deleteBox i {
   background: -webkit-gradient(
     linear,
     left top,
@@ -36,20 +55,23 @@
   -webkit-text-fill-color: transparent;
   text-shadow: 1px 1px 2px rgba(202, 73, 73, 0.473);
 }
-.WorkoutField_box {
-  position: relative;
-  width: 20%;
-  padding-left: 50px;
-  height: 100%;
+.WorkoutField__editBox {
+  width: 7%;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 2em;
+  cursor: pointer;
 }
-.WorkoutField_box_title {
-  position: absolute;
-  font-size: 0.9em;
-  font-weight: bold;
-  color: var(--main-dark-color);
-  top: 2px;
-  left: 3px;
+.WorkoutField__editBox i {
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgb(147, 243, 109)),
+    to(rgb(38, 172, 34))
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(73, 202, 94, 0.473);
 }

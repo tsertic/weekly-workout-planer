@@ -42,12 +42,14 @@ const WorkoutsDashboard = () => {
         </Fragment>
       )}
       <DaysNavigation />
-      <div className={styles.right_side}>
-        <div className={styles.header}>
-          <span className={styles.header_title}>{daysInWeek[currentDay]}</span>
+      <div className={styles.WorkoutsDashboard__content}>
+        <div className={styles.WorkoutsDashboard__header}>
+          <span className={styles.WorkoutsDashboard__header__title}>
+            {daysInWeek[currentDay]}
+          </span>
           <div
             onClick={handleToggleAddWorkout}
-            className={styles.AddNewWorkoutButton}
+            className={styles.WorkoutsDashboard__AddNewWorkoutButton}
             title="Add new workout"
           >
             <i className="fas fa-plus"></i>

@@ -9,7 +9,7 @@
 }
 .CardioWorkoutForm__title {
   text-align: center;
-  color: #fc8d83;
+  color: #50e664;
 }
 .inputFields {
   display: flex;
@@ -71,6 +71,31 @@
   color: #fff;
   cursor: pointer;
   text-transform: uppercase;
+}
+
+.box {
+  width: 70%;
+}
+
+.box select {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 1px;
+  width: 100%;
+  border: none;
+  font-size: 1em;
+  -webkit-appearance: button;
+  appearance: button;
+  outline: none;
+}
+
+.box:hover::before {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.box select option {
+  padding: 30px;
 }
 
 @media screen and (max-width: 600px) {

@@ -4,7 +4,7 @@ import WWP_Logo from './../../../assets/WWP_Logo.png';
 const MainNavbar = () => {
   return (
     <div className={styles.MainNavbar}>
-      <div className={styles.logo}>
+      <div className={styles.MainNavbar__logo}>
         <img src={WWP_Logo} alt="Weekly workout planner logo" />
       </div>
       <div className={styles.MainNavbar__quote}>

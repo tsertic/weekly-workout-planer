@@ -11,18 +11,18 @@
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.right_side {
+.WorkoutsDashboard__content {
   flex: 1;
 }
 
-.header {
+.WorkoutsDashboard__header {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 35px;
 }
-.header_title {
+.WorkoutsDashboard__header__title {
   text-align: center;
   width: 150px;
   color: white;
@@ -36,19 +36,19 @@
   border-top: none;
   background: #3385c6;
 }
-.AddNewWorkoutButton {
+.WorkoutsDashboard__AddNewWorkoutButton {
   position: absolute;
   top: -10px;
   right: 25px;
   cursor: pointer;
 }
-.AddNewWorkoutButton i {
+.WorkoutsDashboard__AddNewWorkoutButton i {
   color: white;
   text-shadow: 2px 2px 2px #4279a3;
   font-size: 2em;
   transition: 200ms ease-in-out;
 }
 
-.AddNewWorkoutButton i:hover {
+.WorkoutsDashboard__AddNewWorkoutButton i:hover {
   color: lightgreen;
 }
