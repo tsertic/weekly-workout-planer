@@ -5,14 +5,18 @@ import WorkoutsContext from '../../../../context/workouts/workoutsContext';
 const WorkoutField = props => {
   //context
   const workoutsContext = useContext(WorkoutsContext);
-  const { deleteWorkout } = workoutsContext;
+  const { deleteWorkout, updateWorkout } = workoutsContext;
   const { name, power, cardio, _id } = props.workout;
 
   //state
   const [editing, setEditing] = useState(false);
   const [workout, setWorkout] = useState(props.workout);
-  const toggleEditing = () => {
-    setEditing(!editing);
+  const openEditing = () => {
+    setEditing(true);
+  };
+  const saveUpdatedWorkout = () => {
+    updateWorkout(workout);
+    setEditing(false);
   };
   const handleInputChange = e => {
     //TODO-do it more elegant
@@ -138,11 +142,12 @@ const WorkoutField = props => {
           </Fragment>
         )}
       </div>
-      <div
-        className={styles.WorkoutField__editBox}
-        onClick={() => toggleEditing()}
-      >
-        <i className="fas fa-edit"></i>
+      <div className={styles.WorkoutField__editBox}>
+        {editing ? (
+          <i className="fas fa-save" onClick={() => saveUpdatedWorkout()}></i>
+        ) : (
+          <i className="fas fa-edit" onClick={() => openEditing()}></i>
+        )}
       </div>
       <div
         className={styles.WorkoutField__deleteBox}

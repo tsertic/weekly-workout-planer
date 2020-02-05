@@ -70,7 +70,27 @@ const WorkoutsState = props => {
       console.log(err.response.msg);
     }
   };
-  //edit workout
+  //update workout
+
+  const updateWorkout = async workout => {
+    const config = {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    };
+
+    try {
+      const res = await axios.put(
+        `/api/workouts/${workout._id}`,
+        workout,
+        config
+      );
+
+      dispatch({ type: workoutsTypes.UPDATE_WORKOUT, payload: res.data });
+    } catch (err) {
+      console.log(err.response.msg);
+    }
+  };
 
   //change day
   const changeDay = day => {
@@ -93,7 +113,8 @@ const WorkoutsState = props => {
         changeDay,
         addWorkout,
         getWorkouts,
-        deleteWorkout
+        deleteWorkout,
+        updateWorkout
       }}
     >
       {props.children}
