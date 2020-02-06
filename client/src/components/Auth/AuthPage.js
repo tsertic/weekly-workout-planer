@@ -5,6 +5,7 @@ import Login from './Login/Login';
 import SignUp from './SignUp/SignUp';
 //context
 import AuthContext from '../../context/auth/authContext';
+import ErrorMsg from './ErrorMsg/ErrorMsg';
 
 const AuthPage = props => {
   //context
@@ -14,8 +15,17 @@ const AuthPage = props => {
     register,
     isAuthenticated,
     loadUser,
-    currentAuthForm
+    currentAuthForm,
+    clearErrors,
+    error
   } = authContext;
+
+  //clear error msg after 3sec
+  if (error) {
+    setTimeout(() => {
+      clearErrors();
+    }, 3000);
+  }
 
   //effect
   //if it is auth then redirect to home page
@@ -84,6 +94,7 @@ const AuthPage = props => {
         <div className={styles.AuthPage__img}></div>
       </div>
       <div className={styles.AuthPage__form}>
+        <ErrorMsg msg={error} />
         {currentAuthForm === 'login' ? (
           <Login
             handleSubmit={handleSubmit}

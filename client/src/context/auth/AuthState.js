@@ -30,7 +30,7 @@ const AuthState = props => {
           payload: res.data
         });
       } catch (err) {
-        /*  dispatch({ type: AUTH_ERROR }); */
+        dispatch({ type: authTypes.AUTH_ERROR });
       }
     }
   };
@@ -51,11 +51,13 @@ const AuthState = props => {
       });
       loadUser();
     } catch (err) {
-      console.log(err.response);
-      /*  dispatch({
-        type: REGISTER_FAIL,
-        payload: err.response.data.msg
-      }); */
+      const errorMsg = err.response.data.errors
+        ? err.response.data.errors[0].msg
+        : err.response.data.msg;
+      dispatch({
+        type: authTypes.REGISTER_FAIL,
+        payload: errorMsg
+      });
     }
   };
   //Login User
@@ -83,6 +85,7 @@ const AuthState = props => {
   };
   //logout
   const logout = () => dispatch({ type: authTypes.LOGOUT });
+
   //Clear Errors
   const clearErrors = () => dispatch({ type: authTypes.CLEAR_ERRORS });
 
@@ -90,6 +93,7 @@ const AuthState = props => {
   const registerForm = () => dispatch({ type: authTypes.REGISTER_FORM });
   //set to login form
   const loginForm = () => dispatch({ type: authTypes.LOGIN_FORM });
+
   return (
     <AuthContext.Provider
       value={{

@@ -6,7 +6,6 @@ export default (state, action) => {
       return {
         ...state,
         isAuthenticated: true,
-        loading: false,
         user: action.payload
       };
 
@@ -15,16 +14,14 @@ export default (state, action) => {
       return {
         ...state,
         token: action.payload,
-        isAuthenticated: true,
-        loading: false
+        isAuthenticated: true
       };
     case authTypes.LOGIN_SUCCESS:
       localStorage.setItem('token', action.payload);
       return {
         ...state,
         token: action.payload,
-        isAuthenticated: true,
-        loading: false
+        isAuthenticated: true
       };
     case authTypes.REGISTER_FAIL:
     case authTypes.AUTH_ERROR:
@@ -35,7 +32,6 @@ export default (state, action) => {
         ...state,
         token: null,
         isAuthenticated: false,
-        loading: false,
         user: null,
         error: action.payload
       };
