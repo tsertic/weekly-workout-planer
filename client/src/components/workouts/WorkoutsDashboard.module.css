@@ -20,6 +20,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translateY(-20px);
   height: 35px;
 }
 .WorkoutsDashboard__header__title {
@@ -27,10 +28,9 @@
   width: 150px;
   color: white;
   display: block;
-  position: absolute;
-  top: -20px;
+
   padding: 5px 15px;
-  left: 40%;
+
   font-size: 1.4em;
   border: 1px solid #4279a3;
   border-top: none;
@@ -38,7 +38,7 @@
 }
 .WorkoutsDashboard__AddNewWorkoutButton {
   position: absolute;
-  top: -10px;
+  top: 10px;
   right: 25px;
   cursor: pointer;
 }
@@ -51,4 +51,30 @@
 
 .WorkoutsDashboard__AddNewWorkoutButton i:hover {
   color: lightgreen;
+}
+
+/* next,previous day buttons */
+.dayBtn {
+  display: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.dayBtn i {
+  color: white;
+  font-size: 1.4em;
+  transition: 0.4s all;
+}
+.dayBtn i:hover {
+  color: var(--main-blue-color);
+}
+@media (max-width: 600px) {
+  .WorkoutsDashboard {
+    padding: 20px 0;
+  }
+  .dayBtn {
+    display: block;
+  }
 }

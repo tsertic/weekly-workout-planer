@@ -94,7 +94,10 @@ const WorkoutsState = props => {
 
   //change day
   const changeDay = day => {
-    dispatch({ type: workoutsTypes.CHANGE_DAY, payload: day });
+    let newDay = day;
+    if (day > 6) newDay = 0;
+    if (day < 0) newDay = 6;
+    dispatch({ type: workoutsTypes.CHANGE_DAY, payload: newDay });
   };
 
   //add new workout modal

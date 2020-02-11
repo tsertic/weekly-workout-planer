@@ -4,6 +4,7 @@
   --secondary-blue-color: #6da8d7;
   --main-dark-color: #3a3a3a;
   --main-bg-color: coral;
+  --mobile-breakpoint: 600px;
 }
 
 * {

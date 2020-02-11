@@ -19,7 +19,8 @@ const WorkoutsDashboard = () => {
     toggleShowNewWorkout,
     currentDay,
     daysInWeek,
-    getWorkouts
+    getWorkouts,
+    changeDay
   } = workoutsContext;
 
   useEffect(() => {
@@ -44,9 +45,21 @@ const WorkoutsDashboard = () => {
       <DaysNavigation />
       <div className={styles.WorkoutsDashboard__content}>
         <div className={styles.WorkoutsDashboard__header}>
+          <button
+            onClick={() => changeDay(currentDay - 1)}
+            className={[styles.dayBtn, styles.previousDayBtn].join(' ')}
+          >
+            <i className="fas fa-chevron-left"></i>
+          </button>
           <span className={styles.WorkoutsDashboard__header__title}>
             {daysInWeek[currentDay]}
           </span>
+          <button
+            onClick={() => changeDay(currentDay + 1)}
+            className={[styles.dayBtn, styles.nextDayBtn].join(' ')}
+          >
+            <i className="fas fa-chevron-right"></i>
+          </button>
           <div
             onClick={handleToggleAddWorkout}
             className={styles.WorkoutsDashboard__AddNewWorkoutButton}
